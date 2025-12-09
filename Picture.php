@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["loggedInUser"])) {
-    header("Location: Login.html");
+    header("Location: Login.php");
     exit();
 }
 
@@ -195,4 +195,5 @@ if ($result->num_rows == 1) {
 </div>
 
 </body>
+
 </html>
