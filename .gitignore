@@ -1,0 +1,62 @@
+# XAMPP .gitignore for PHP Projects
+
+# Database files
+*.db
+*.sql
+*.sqlite
+
+# Log files
+*.log
+error_log
+
+# Session files
+sess_*
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# XAMPP specific
+xampp/
+htdocs/phpmyadmin/
+htdocs/webalizer/
+
+# Environment/config files (sensitive data!)
+.env
+config.ini
+db_connect.php  # We'll exclude this since it has passwords
+
+# Uploaded files (if stored locally)
+uploads/
+tmp/
+
+# Composer
+vendor/
+composer.lock
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.jar

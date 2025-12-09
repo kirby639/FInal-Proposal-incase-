@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d90429;
+    --secondary-color: #1a1a1d;
+    --accent-color: #ef233c;
+    --light-color: #f1f1f1;
+    --dark-color: #0d0d0f;
+    --text-color: #e6e6e6;
+    --text-light: #a1a1a1;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--dark-color);
+    overflow: hidden;
+}
+
+img { /* Akatsuki Picture */
+    max-width: 400px;
+    height: auto;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+.hero, .villian {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #3a0f12 0%, #0b0b0c 80%);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+}
+.villian {
+    left: -10px;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    background: url('https://wallpapers.com/images/hd/akatsuki-logo-red-cloud-pattern-bulw8ch6y6nrolpi.jpg');
+    background-size: cover;
+    opacity: 0.08;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 7px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.villian::before {
+    content: '';
+    position: absolute;
+    background: url('background.png');
+    opacity: 0.08;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: -10px;
+    left: 7px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-content,
+.hero-text,
+.hero-buttons,
+.villian-content,
+.villian-text,
+.villian-buttons {
+    position: relative;
+    z-index: 2;
+}
+
+input[type="number"], input[type="text"], input[type="date"], input[type="file"] { /* box in inputting the id last name and birthdate */
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ac4242cc;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: border-color 10s;
+    outline: rgba(173, 58, 58, 0.781);
+    border-color: rgba(173, 53, 53, 0.699);
+    box-shadow: 0 0 10px rgba(190, 49, 49, 0.678);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+label {
+    display: flex;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.hero-text h1, .villian-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0px 0px 12px rgba(217, 4, 41, 0.9);
+}
+
+.hero-text h2, .villian-text h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.hero-text h3, .villian-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.hero-buttons,
+.villian-buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-primary, .btn-secondary {
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(217, 4, 41, 0.6);
+    transition: var(--transition); /* Use consistent transition */
+}
+
+.btn-secondary:hover, .btn-primary:hover {
+    background-color: #ff1e3c;
+    color: #fff;
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 
+        0 0 15px rgba(217, 4, 41, 0.8),
+        0 0 30px rgba(217, 4, 41, 0.6),
+        0 0 45px rgba(217, 4, 41, 0.4);
+}
+
+.home {
+    text-align: center;
+    
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Space between button and link */
+  padding: 2rem;
+  text-align: center;
+}
+
+.login, .go-back, .register, .home {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 50px rgba(191, 40, 40, 0.556);
+  background-color:#44151b;
+  color: white;
+  margin: 5px 0;
+  transition: var(--transition); /* Use consistent transition */
+}
+.login:hover, .go-back:hover, .register:hover, .home:hover {
+  background-color: #080506;
+    color: #fff;
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 
+        0 0 15px rgba(217, 4, 41, 0.8),
+        0 0 30px rgba(217, 4, 41, 0.6),
+        0 0 45px rgba(217, 4, 41, 0.4);
+}
+
+.tooltip-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(217, 4, 41, 0.2);
+}
+
+.btn-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.tooltip-wrapper:hover {
+    transform: translateY(-6px) scale(1.08);
+    filter: none;
+    box-shadow: 0 0 20px rgba(217, 4, 41, 0.8), 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* SIGNUP FORM STYLES */
+.signup-container h1{
+    font-size: 20px;
+    text-align: center;
+    left: 5px;
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: none;
+}
+
+input:invalid {
+    border-color: #ff4444;
+    background-color: rgba(255, 68, 68, 0.05);
+}
+
+input[type="file"] {
+    color: var(--text-color);
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background: rgba(165, 32, 54, 0.781);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ac4242cc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #d90429;
+    outline: none;
+    box-shadow: 0 0 10px rgba(217, 4, 41, 0.5);
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #155724;
+    color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #721c24;
+    color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+    background-color: #0c5460;
+    color: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    color: white;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: rgba(217, 4, 41, 0.5);
+    padding: 15px;
+    text-align: left;
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(217, 4, 41, 0.1);
+}
+
+@media (max-width: 768px) {
+    .hero-text h1, .villian-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text h2, .villian-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .id-card-container {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+  .Logo { 
+    width: 200px; /* smaller so it fits */
+  }
+
+  .tooltip-wrapper { 
+    width: 70px; 
+    height: 70px; 
+  }
+
+  .hero-buttons {
+    gap: 1rem; /* reduce spacing */
+  }
+}
+
+@media print {
+    #logoutBtn, .coordinate-helper {
+        display: none !important;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: white !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #user-photo-overlay {
+        width: 180px;
+        height: 180px;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .info-overlay {
+        font-size: 16px !important;
+    }
+}
